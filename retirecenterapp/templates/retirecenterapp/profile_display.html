@@ -1,0 +1,9 @@
+{% extends 'retirecenterapp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>My Profile</h1>
+    <p>Name: {{user.first_name}} {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Role: {{user.profile.role}}</p>
+    <p>Alt. Contact: {{user.profile.altcontact}}</p>
+{% endblock %}

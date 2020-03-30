@@ -1,0 +1,48 @@
+{% extends 'retirecenterapp/base.html' %}
+{% load static %}
+{% block content %}
+    <body>
+    <html>
+            {% if user.is_authenticated %}
+                <div class="page-container">
+                    <h2 class="top-menu">Welcome {{ user.first_name }},</h2>
+                </div>
+            {% endif %}
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="links">
+                            <!-- Example row of columns -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="thumbnail" style="height:450px">
+                                        <img src="{% static "images/maint.png" %}" alt="maintworkers" style="height:50%"/>
+                                        <div class="caption">
+                                            <h2>Maintenance Request Orders</h2>
+                                            <p>
+                                                <a class="btn btn-primary" href="{% url 'retirecenterapp:order_list' %}"role="button">View Current Requests &raquo;</a><br></br>
+                                                <a class="btn btn-primary" href="{% url 'retirecenterapp:order_new' %}"role="button">New Maintenance Request &raquo;</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail" style="height:450px">
+                                        <img src="{% static "images/profile.jpg" %}" alt="genericprofile" style="height:50%"/>
+                                        <div class="caption">
+                                            <h2>My Profile</h2>
+                                            <p>
+                                                <a class="btn btn-primary" href="{% url 'retirecenterapp:profile_display' %}"role="button">View My Profile &raquo;</a><br></br>
+                                                <a class="btn btn-primary" href="{% url 'retirecenterapp:profile_edit' %}"role="button" disabled>Edit My Profile &raquo;</a><br></br>                                            
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </html>
+    </body>
+{% endblock %}

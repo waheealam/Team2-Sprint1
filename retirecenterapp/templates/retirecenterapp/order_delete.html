@@ -1,0 +1,13 @@
+{% extends 'retirecenterapp/base.html' %}
+{% block body_block %}
+    <h1>Delete {{ order.name }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'retirecenterapp:home' %} ">Cancel</a>
+# MavFood services: Service_Delete has this line: url 'crm:home' pk=service.cust_number %}
+
+    </form>
+
+{% endblock %}
