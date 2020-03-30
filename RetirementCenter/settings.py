@@ -28,7 +28,7 @@ SECRET_KEY = 'wv*v63_th_1rc5_au8*_+szm-e-pp^(1q+99gu)b020m#nx0cw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'retirecenterapp',
     'phone_field',
-    'django.contrib.postgres',
-    'crispy_forms'
+     'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -132,9 +131,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL ='/media/'
-
+MEDIA_ROOT= BASE_DIR
 #django_heroku.settings(locals())
